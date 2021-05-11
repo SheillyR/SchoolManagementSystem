@@ -1,5 +1,7 @@
 package school.management.system;
 
+import java.util.List;
+
 /**
  * Many teachers, many students.
  * Implements teachers and students
@@ -7,8 +9,8 @@ package school.management.system;
  */
 public class School {
 
-    private Teacher teacher;
-    private Student student;
+    private List<Teacher> teachers;
+    private List<Student> students;
     private int totalMoneyEarned;
     private int totalMoneySpent;
 
