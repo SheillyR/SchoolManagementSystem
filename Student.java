@@ -39,4 +39,14 @@ public class Student {
         this.grade = grade;
 
     }
+
+    /**
+     * Keep adding the fees to feesPaid Field.
+     * Add the fees to the fees paid.
+     * The school is to receive the funds.
+     * @param fees the fees that the student pays.
+     */
+    public void updateFeesPaid(int fees){
+        feesPaid += fees;
+    }
 }
