@@ -46,7 +46,7 @@ public class Student {
      * The school is to receive the funds.
      * @param fees the fees that the student pays.
      */
-    public void updateFeesPaid(int fees){
+    public void payFees(int fees){
         feesPaid += fees;
     }
 
