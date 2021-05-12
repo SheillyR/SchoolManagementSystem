@@ -63,6 +63,6 @@ public class Teacher {
      */
     public void receiveSalary(int salary) {
         salaryEarned += salary;
-        School.updateTotalMoneyEarned(salary);
+        School.updateTotalMoneySpent(salary);
     }
 }
