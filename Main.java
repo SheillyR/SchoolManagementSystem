@@ -23,7 +23,8 @@ public class Main {
         studentList.add(rabbi);
         studentList.add(rakshith);
 
-
+        School ghs = new School(teacherList, studentList);
+        System.out.println("GHS has earned $" + ghs.getTotalMoneyEarned());
 
 
     }
