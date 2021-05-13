@@ -101,7 +101,11 @@ public class Student {
 
     @Override
     public String toString() {
+
+        return "Nombre: " + name + "Id: " + id + "Grado: " + grade;
+        /*
         return "Student's name :"+ name +
                 " total fees paid so far $"+ feesPaid;
+                */
     }
 }
