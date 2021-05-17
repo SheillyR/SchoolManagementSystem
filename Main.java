@@ -1,6 +1,7 @@
 package school.management.system;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,29 +13,40 @@ public class Main {
         String name;
         int id;
         int salary;
-        int numberOfTeachers;
+        Integer numberOfTeachers;
+        boolean continuar = true;
         Teacher teacher;
         List<Teacher> teacherList = new ArrayList<>();
+        while(continuar) {
+            try {
+                System.out.print("Ingrese el número de profesores que desea registrar: ");
+                numberOfTeachers = scanner.nextInt();
 
-        System.out.print("Ingrese el número de profesores que desea registrar: ");
-        numberOfTeachers= scanner.nextInt();
+                if(numberOfTeachers.toString().matches("[0-9]*")) {
 
-        for(int i = 0; i < numberOfTeachers; i++){
 
-            System.out.print("Nombre: ");
-            name = scanner.next();
+                    for (int i = 0; i < numberOfTeachers; i++) {
 
-            System.out.print("Id: ");
-            id = scanner.nextInt();
+                        System.out.print("Nombre: ");
+                        name = scanner.next();
 
-            System.out.print("Salario: ");
-            salary = scanner.nextInt();
+                        System.out.print("Id: ");
+                        id = scanner.nextInt();
 
-            teacher = new Teacher(id, name, salary);
-            teacherList.add(teacher);
+                        System.out.print("Salario: ");
+                        salary = scanner.nextInt();
 
+                        teacher = new Teacher(id, name, salary);
+                        teacherList.add(teacher);
+
+                    }
+                    continuar = false;
+                }
+            } catch (InputMismatchException error) {
+                System.out.println("El carácter ingresado no era numérico");
+
+            }
         }
-
         System.out.println(teacherList.toString());
 
         String studentName;
@@ -72,6 +84,7 @@ public class Main {
         }
 
         System.out.println("GHS has earned $" + ghs.getTotalMoneyEarned());
+
         /*
         studentList.get(0).payFees(5000);
         studentList.get(1).payFees(6000);
